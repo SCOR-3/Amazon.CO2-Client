@@ -11,9 +11,18 @@ const ProductDescDiv = () => {
         Speaker, Headphone Out, Height Adjust Stand, 34WQ75C
       </h1>
       {/* <span> 3.8</span> */}
-      <Rating value={3.8} readOnly size="small" className="product-rating"/>
+      <Rating value={3.8} readOnly size="small" className="product-rating" />
       <hr />
-      <p className="product-pricing"><span className="discount-percentage">-23%</span> <span className="price-symbol-large">₹</span>43,999</p>
+      <p className="product-pricing">
+        <span className="discount-percentage">-23%</span>{" "}
+        <span className="price-symbol-large">₹</span>43,999<span className="price-symbol-large">00</span>
+      </p>
+      <p className="mrp">M.R.P: <span className="mrp-pricing">₹57,000</span></p>
+      <p className="amazon-prime-verified">
+        <i class="fa-solid fa-check"></i>
+        <i class="fa-brands fa-amazon"></i>
+      </p>
+      <p className="taxes">Inclusive of all taxes</p>
       <hr />
       <ProductSellerCarousel />
     </div>

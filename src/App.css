@@ -80,3 +80,14 @@ hr {
   margin-right: -59px;
   z-index: 10;
 }
+.amazon-prime-verified{
+  margin-top: 0;
+  color: #565959 ;
+}
+.amazon-prime-verified .fa-check{
+  color: orange;
+} 
+.amazon-prime-verified .fa-amazon{
+  color: #20a6ff;
+}
+

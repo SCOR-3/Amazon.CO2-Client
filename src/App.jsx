@@ -3,13 +3,17 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import ProductScreen from "./screens/ProductScreen/ProductScreen";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <Fragment>
-      <ProductScreen/>
+      <Provider store={store}>
+        <ProductScreen />
+      </Provider>
     </Fragment>
   );
 }

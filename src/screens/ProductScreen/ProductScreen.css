@@ -28,13 +28,12 @@
   position: relative;
   padding: 1.5%;
   font-family: "Ember-Light";
-  font-size: 0.5rem;
+  /* font-size: 0.5rem; */
   word-break: break-word;
   text-rendering: optimizeLegibility;
   font-weight: bolder;
-  
 }
-.product-desc-div h1{
+.product-desc-div h1 {
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
@@ -44,8 +43,9 @@
 }
 .product-pricing {
   font-size: 1.8rem;
+  margin-bottom: 4px;
 }
-.product-rating{
+.product-rating {
   font-size: 1rem !important;
   margin: 0 auto 10px 0;
 }
@@ -54,11 +54,26 @@
   top: -0.7rem;
   font-size: 14px;
 }
+.mrp {
+  margin: 6px 0;
+  color: #565959;
+  font-family: "Ember-Light";
+  font-weight: lighter;
+  font-size: 0.8rem;
+}
+.mrp .mrp-pricing {
+  text-decoration: line-through;
+}
 /* Product Img Div */
 /* Product Seller Carousel */
+
+.slick-slide {
+  height: 100%;
+}
 .seller-slide-wrapper {
   padding: 2%;
   overflow: hidden;
+  height: 100%;
 }
 .seller-slide {
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
@@ -67,10 +82,16 @@
   min-height: 100px;
   padding: 1% 10%;
   cursor: pointer;
+  height: 100%;
+  align-items: stretch;
+  flex: 1;
+  flex-wrap: wrap;
+  display: grid;
 }
-.product-screen-div > .product-price-div {
-  width: 25%;
-  position: relative;
+.selected-slide {
+  /* box-shadow: 0 0 2px 0 #2e7d328b !important; */
+  border: 1px solid #2e7d32;
+  /* transform: scale(1.05); */
 }
 .product-price {
   font-size: large;
@@ -91,24 +112,109 @@
   cursor: unset;
   outline: 0;
   text-decoration: none;
-  padding: 5% 11px;
+  padding: 8px 11px;
   vertical-align: middle;
   box-sizing: border-box;
   background-color: transparent;
   border: 1px solid rgba(46, 125, 50, 0.7);
-  color: #2e7d32;
+
   font-family: "Ember-Medium";
   margin: 10px 0;
+  float: right;
+  color: #2e7d32;
+  background-color: white;
+}
+.selected-slide .carbon-point-chip {
+  background-color: #2e7d32;
+  color: white;
 }
 .carbon-point-chip:hover {
-  color: white;
-  background-color: #2e7d32;
+  color: #2e7d32;
+  background-color: white;
 }
-.seller-rating{
+.seller-rating {
   font-size: 0.8rem !important;
   margin: -0 auto 10px -2px;
 }
-.seller-name{
+.seller-name-div {
+  flex: 2;
+}
+.seller-name {
   margin-bottom: 0;
   font-size: 0.9rem;
+}
+.seller-slide-heading {
+  display: flex;
+}
+/* Product Price Div */
+.product-screen-div > .product-price-div-wrapper {
+  width: 25%;
+  position: relative;
+}
+.product-price-div-wrapper {
+  padding: 1.5%;
+  font-family: "Ember-Medium";
+}
+.product-price-div {
+  border: 1px #d5d9d9 solid;
+  width: 100%;
+  min-height: 20vh;
+  border-radius: 0 0 8px 8px;
+  padding: 0 7.5%;
+}
+.delivery-date {
+  font-family: "Ember-Light";
+}
+.delivery-date span {
+  font-family: "Ember-Medium";
+}
+.delivery-address {
+  display: flex;
+  color: #007185;
+  font-size: 0.8rem;
+  font-family: "Ember-Regular";
+}
+.delivery-address i {
+  margin-right: 4px;
+  font-size: 1rem;
+  position: relative;
+  top: 2px;
+}
+.stock-availability {
+  font-family: "Ember-Regular";
+  font-weight: lighter;
+}
+.price-div-seller-info {
+  font-family: "Ember-Regular";
+}
+.price-div-seller-info span {
+  color: #007185;
+}
+.price-div-btns {
+  width: 100%;
+  padding: 5%;
+  margin: 5px auto;
+  border-radius: 20px;
+  border: 0;
+}
+.green {
+  color: #2e7d32;
+}
+.taxes {
+  font-family: "Ember-Light";
+  font-weight: lighter;
+  margin-top: 0;
+}
+#add-to-cart-btn {
+  background-color: #ffd814;
+}
+#buy-now-btn {
+  background-color: #ffa41c;
+  margin-bottom: 15px;
+}
+#in-stock {
+  color: rgb(13, 133, 19);
+}
+#out-of-stock {
+  color: red;
 }

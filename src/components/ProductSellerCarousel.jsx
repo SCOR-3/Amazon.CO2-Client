@@ -7,34 +7,39 @@ import { Rating } from "@mui/material";
 
 const sellerDetails = [
   {
-    name: "ABC Seller",
-    price: 500,
+    name: "ABC Seller ABC Seller",
+    price: 43999,
     carbonPoint: 5,
     rating: 3.4,
+    selected: true
   },
   {
     name: "ABC Seller",
     price: 500,
     carbonPoint: 5,
     rating: 3.4,
+    selected: false
   },
   {
     name: "BCA",
     price: 500,
     carbonPoint: 5,
     rating: 3.4,
+    selected: false
   },
   {
     name: "ABC",
     price: 500,
     carbonPoint: 5,
     rating: 3.4,
+    selected: false
   },
   {
     name: "ABC",
     price: 500,
     carbonPoint: 5,
     rating: 3.4,
+    selected: false
   },
 ];
 
@@ -54,8 +59,21 @@ const ProductSellerCarousel = () => {
         {sellerDetails.map((seller) => {
           return (
             <div className="seller-slide-wrapper">
-              <div className="seller-slide">
-                <h2 className="seller-name">{seller.name}</h2>
+              <div className={seller.selected ? "selected-slide seller-slide" : "seller-slide"}>
+                <div className="seller-slide-heading">
+                  <div className="seller-name-div">
+                    <h2 className="seller-name">{seller.name}</h2>
+                  </div>
+                  <div className="carbon-point-div">
+                    <span className="carbon-point-chip">
+                      <i class="fa-solid fa-seedling">
+                        {" "}
+                        {`  ${seller.carbonPoint}`}{" "}
+                      </i>
+                    </span>
+                  </div>
+                </div>
+
                 <Rating
                   size="small"
                   value={3.4}
@@ -65,17 +83,12 @@ const ProductSellerCarousel = () => {
                 />
                 <br />
                 <span className="product-price">
-                  <span className="discount-percentage">-23%{' '}</span>
+                  <span className="discount-percentage">-23% </span>
                   <span className="price-symbol">₹</span>
                   {seller.price}
                 </span>
+                <p className="mrp">M.R.P: <span className="mrp-pricing">₹57,000</span></p>
                 <br />
-                <span className="carbon-point-chip">
-                  <i class="fa-solid fa-seedling">
-                    {" "}
-                    {`  ${seller.carbonPoint}`}{" "}
-                  </i>
-                </span>
               </div>
             </div>
           );
