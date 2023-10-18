@@ -5,16 +5,20 @@ import "./App.css";
 import ProductScreen from "./screens/ProductScreen/ProductScreen";
 import { Provider } from "react-redux";
 import store from "./store";
+import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import Header from "./components/Header";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Fragment>
+    <div className="app">
       <Provider store={store}>
-        <ProductScreen />
+        <Header />
+        {/* <ProductScreen /> */}
+        <HomeScreen />
       </Provider>
-    </Fragment>
+    </div>
   );
 }
 

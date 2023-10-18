@@ -69,6 +69,10 @@ hr {
   margin-bottom: 14px;
   margin-top: 0;
 }
+.app {
+  margin: 0;
+  background: rgb(234, 237, 237);
+}
 .slick-next:before,
 .slick-prev:before {
   color: black !important;
@@ -80,14 +84,13 @@ hr {
   margin-right: -59px;
   z-index: 10;
 }
-.amazon-prime-verified{
+.amazon-prime-verified {
   margin-top: 0;
-  color: #565959 ;
+  color: #565959;
 }
-.amazon-prime-verified .fa-check{
+.amazon-prime-verified .fa-check {
   color: orange;
-} 
-.amazon-prime-verified .fa-amazon{
+}
+.amazon-prime-verified .fa-amazon {
   color: #20a6ff;
 }
-
