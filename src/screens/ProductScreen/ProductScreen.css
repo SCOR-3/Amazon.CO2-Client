@@ -1,0 +1,114 @@
+/* Product Screen */
+.product-screen-wrapper {
+  width: 90%;
+  margin: auto;
+}
+.product-screen-div {
+  display: flex;
+  min-height: 35vh;
+  width: 100%;
+  margin: auto;
+}
+.product-screen-div > .product-img-div {
+  width: 35%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5%;
+}
+.product-img {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+/* Product Desc Div */
+.product-screen-div > .product-desc-div {
+  width: 40%;
+  position: relative;
+  padding: 1.5%;
+  font-family: "Ember-Light";
+  font-size: 0.5rem;
+  word-break: break-word;
+  text-rendering: optimizeLegibility;
+  font-weight: bolder;
+  
+}
+.product-desc-div h1{
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.discount-percentage {
+  color: #cc0c39 !important;
+  font-weight: 300 !important;
+}
+.product-pricing {
+  font-size: 1.8rem;
+}
+.product-rating{
+  font-size: 1rem !important;
+  margin: 0 auto 10px 0;
+}
+.price-symbol-large {
+  position: relative;
+  top: -0.7rem;
+  font-size: 14px;
+}
+/* Product Img Div */
+/* Product Seller Carousel */
+.seller-slide-wrapper {
+  padding: 2%;
+  overflow: hidden;
+}
+.seller-slide {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+  margin-right: 8px;
+  border-radius: 5px;
+  min-height: 100px;
+  padding: 1% 10%;
+  cursor: pointer;
+}
+.product-screen-div > .product-price-div {
+  width: 25%;
+  position: relative;
+}
+.product-price {
+  font-size: large;
+}
+.price-symbol {
+  position: relative;
+  top: -0.3rem;
+  font-size: 12.5px;
+}
+.carbon-point-chip {
+  display: inline-flex;
+  max-width: 100%;
+  font-size: 0.8125rem;
+  border-radius: 16px;
+  white-space: nowrap;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  cursor: unset;
+  outline: 0;
+  text-decoration: none;
+  padding: 5% 11px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid rgba(46, 125, 50, 0.7);
+  color: #2e7d32;
+  font-family: "Ember-Medium";
+  margin: 10px 0;
+}
+.carbon-point-chip:hover {
+  color: white;
+  background-color: #2e7d32;
+}
+.seller-rating{
+  font-size: 0.8rem !important;
+  margin: -0 auto 10px -2px;
+}
+.seller-name{
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
