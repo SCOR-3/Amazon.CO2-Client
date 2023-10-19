@@ -71,7 +71,7 @@ hr {
 }
 .app {
   margin: 0;
-  background: rgb(234, 237, 237);
+  /* background: rgb(234, 237, 237); */
 }
 .slick-next:before,
 .slick-prev:before {

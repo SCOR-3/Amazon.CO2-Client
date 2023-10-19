@@ -9,14 +9,7 @@
   width: 100%;
   margin: auto;
 }
-.product-screen-div > .product-img-div {
-  width: 35%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5%;
-}
+
 .product-img {
   width: 100%;
   aspect-ratio: 1;
@@ -33,6 +26,17 @@
   text-rendering: optimizeLegibility;
   font-weight: bolder;
 }
+.great-indian-festival {
+  background-color: #cc0c39 !important;
+  padding: 4px 8px 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  /* margin-bottom: 4px; */
+  color: white;
+  font-family: "Ember-Medium";
+  font-size: 0.8rem;
+}
 .product-desc-div h1 {
   font-size: 1.4rem;
   line-height: 1.8rem;
@@ -44,6 +48,7 @@
 .product-pricing {
   font-size: 1.8rem;
   margin-bottom: 4px;
+  margin-top: 10px;
 }
 .product-rating {
   font-size: 1rem !important;
@@ -64,7 +69,18 @@
 .mrp .mrp-pricing {
   text-decoration: line-through;
 }
-/* Product Img Div */
+
+/* --------------------Product Img Div-------------------- */
+
+.product-screen-div > .product-img-div {
+  width: 35%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5%;
+}
+
 /* Product Seller Carousel */
 
 .slick-slide {
@@ -89,9 +105,24 @@
   display: grid;
 }
 .selected-slide {
-  /* box-shadow: 0 0 2px 0 #2e7d328b !important; */
-  border: 1px solid #2e7d32;
+  box-shadow: 0 0 4px 0 #2e7d328b !important;
+  border: 1px solid #2e7d3266;
+  background-color: #131921;
+  color: white !important;
   /* transform: scale(1.05); */
+}
+.selected-slide .carbon-point-chip {
+  background-color: white;
+  color: #2e7d32;
+}
+.selected-slide .mrp {
+  color: white;
+}
+.selected-slide .discount-percentage {
+  color: #f79b34 !important;
+}
+.slider-wrapper {
+  padding: 10%;
 }
 .product-price {
   font-size: large;
@@ -121,13 +152,11 @@
   font-family: "Ember-Medium";
   margin: 10px 0;
   float: right;
-  color: #2e7d32;
-  background-color: white;
-}
-.selected-slide .carbon-point-chip {
-  background-color: #2e7d32;
+
   color: white;
+  background-color: #2e7d32;
 }
+
 .carbon-point-chip:hover {
   color: #2e7d32;
   background-color: white;

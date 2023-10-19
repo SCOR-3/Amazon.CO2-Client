@@ -15,8 +15,8 @@ function App() {
     <div className="app">
       <Provider store={store}>
         <Header />
-        {/* <ProductScreen /> */}
-        <HomeScreen />
+        <ProductScreen />
+        {/* <HomeScreen /> */}
       </Provider>
     </div>
   );

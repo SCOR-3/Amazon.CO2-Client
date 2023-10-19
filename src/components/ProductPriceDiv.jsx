@@ -19,16 +19,13 @@ const ProductPriceDiv = () => {
     "December",
   ];
 
-  const cart = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  console.log(cart)
-
+  const selectedSeller = useSelector((state) => state.selected.selectedItem);
   return (
     <div className="product-price-div-wrapper">
       <div className="product-price-div">
         <p className="product-pricing">
           {" "}
-          <span className="price-symbol-large">₹</span>43,999
+          <span className="price-symbol-large">₹</span>{selectedSeller.price}
           <span className="price-symbol-large">00</span>
         </p>
         <p className="amazon-prime-verified">
@@ -51,7 +48,7 @@ const ProductPriceDiv = () => {
           <span id="in-stock">In Stock</span>
         </h3>
         <p className="price-div-seller-info">
-          Sold by <span>ABC Seller</span> and <span>Fulfilled by Amazon</span>
+          Sold by <span>{selectedSeller.name}</span> and <span>Fulfilled by Amazon</span>
         </p>
         <button className="price-div-btns" id="add-to-cart-btn">
           Add to Cart

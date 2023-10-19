@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const ProductImageDiv = ({ src }) => {
   return (
-    <div className="product-img-div">
-        <img className="product-img" src={src}/>
-    </div>
+    <Fragment>
+      <div className="product-img-div">
+        <div>
+          <img className="product-img" src={src} />
+          
+        </div>
+      </div>
+    </Fragment>
   );
 };
 
