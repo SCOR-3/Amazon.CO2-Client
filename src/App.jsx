@@ -7,16 +7,19 @@ import { Provider } from "react-redux";
 import store from "./store";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import Header from "./components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="app">
       <Provider store={store}>
-        <Header />
-        <ProductScreen />
-        {/* <HomeScreen /> */}
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomeScreen/>} />\
+            <Route path="/product/:id" element={<ProductScreen/>} />
+          </Routes>
+        </BrowserRouter>
       </Provider>
     </div>
   );
