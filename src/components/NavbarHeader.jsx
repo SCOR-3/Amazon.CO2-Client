@@ -1,4 +1,4 @@
-import hamburger from '../assets/hamburger.png'
+import hamburger from '../assets/images/hamburger.png'
 
 const Header = () => {
     return (

@@ -13,6 +13,7 @@ const ProductScreen = () => {
   useEffect(()=>{
     // dispatch(changeSelectedProduct())
   })
+  console.log(id)
 
   return (
     <div className="product-screen-wrapper">

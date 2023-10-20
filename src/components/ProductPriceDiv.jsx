@@ -74,7 +74,7 @@ const ProductPriceDiv = () => {
           Sold by <span>{selectedSeller.name}</span> and{" "}
           <span>Fulfilled by Amazon</span>
         </p>
-        <button className="price-div-btns" id="add-to-cart-btn" onClick={()=>addItemToCart(product)}>
+        <button className="price-div-btns" id="add-to-cart-btn" onClick={()=>addItemToCart(product, selectedSeller)}>
           Add to Cart
         </button>
         <button className="price-div-btns" id="buy-now-btn">

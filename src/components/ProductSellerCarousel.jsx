@@ -72,7 +72,7 @@ const ProductSellerCarousel = () => {
 
   return (
     <Fragment>
-      <h1>Help us make Amazon green: </h1>
+      <h3>Help us make Amazon green: </h3>
       <Slider {...settings}>
         {sellerDetails.map((seller) => {
           return (

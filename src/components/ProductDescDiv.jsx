@@ -26,7 +26,7 @@ const ProductDescDiv = () => {
         <i class="fa-solid fa-check"></i>
         <i class="fa-brands fa-amazon"></i>
       </p>
-      <p className="taxes">Inclusive of all taxes</p>
+      {/* <p className="taxes">Inclusive of all taxes</p> */}
 
       <hr />
       <ProductSellerCarousel />

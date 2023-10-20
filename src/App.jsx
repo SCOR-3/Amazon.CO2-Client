@@ -6,18 +6,21 @@ import ProductScreen from "./screens/ProductScreen/ProductScreen";
 import { Provider } from "react-redux";
 import store from "./store";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import CartScreen from "./screens/CartScreen/CartScreen";
 
 function App() {
   return (
     <div className="app">
       <Provider store={store}>
         <BrowserRouter>
-          <Header />
+          <Navbar />
           <Routes>
             <Route path="/" element={<HomeScreen/>} />\
             <Route path="/product/:id" element={<ProductScreen/>} />
+            <Route path="/checkout" element={<CartScreen/>}/>
           </Routes>
         </BrowserRouter>
       </Provider>
