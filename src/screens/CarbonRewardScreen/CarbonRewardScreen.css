@@ -1,0 +1,99 @@
+.carbon-reward-screen-wrapper {
+  padding: 2% 5%;
+}
+.carbon-rewards-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.carbon-rewards-stats {
+  padding: 2%;
+  width: 20%;
+  height: inherit;
+  background-color: #131921;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.293));
+  border-radius: 20px;
+  color: #ff9900;
+}
+.carbon-rewards-stats-logo-wrapper {
+  margin-bottom: 20px;
+}
+.carbon-rewards-stats-logo {
+  border: 1px solid #ff9900;
+  padding: 3%;
+  border-radius: 50%;
+  background-color: #ff9900;
+  color: #131921;
+  font-size: 20px;
+}
+.carbon-rewards-stats-logo-2 {
+  font-family: "Ember-Regular";
+  font-size: 14px;
+  float: right;
+}
+.carbon-rewards-stats-logo-2 i {
+  margin-right: 5px;
+}
+.carbon-rewards-stats-up {
+  color: rgb(19, 174, 19);
+}
+.carbon-rewards-stats-down {
+  color: red;
+}
+.carbon-rewards-stats-text {
+  color: white;
+  font-family: "Ember-Medium";
+  margin-bottom: 0;
+  font-size: 30px;
+}
+.carbon-rewards-stats-subtext {
+  color: #85919f;
+  font-family: "Ember-Medium";
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+.carbon-guage-div {
+  background-color: white;
+  padding: 2.5%;
+  border-radius: 10px;
+}
+.carbon-reward-coupon-card {
+  padding: 30px;
+  border: 2px dashed #ffffff00;
+}
+.carbon-reward-coupon-card:hover {
+  border: 2px dashed #ddd;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+}
+.carbon-reward-coupon-card img {
+  width: 100%;
+}
+.carbon-reward-coupon-card .coupon-offer {
+  font-family: "Ember-Medium";
+  color: #007600;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.carbon-reward-coupon-card .coupon-product {
+  font-family: "Ember-Medium";
+  color: #007185;
+  font-size: 13px;
+}
+.carbon-reward-coupon-card button {
+  width: 100%;
+  padding: 5%;
+  margin: 5px auto;
+  border-radius: 20px;
+  border: 0;
+  background-color: #ffd814;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  border: 1px solid #fcd200;
+}
+.carbon-reward-coupon-card button:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+.offers-tagline{
+  margin-top: 40px;
+  font-family: "Ember-Regular";
+}

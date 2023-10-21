@@ -10,6 +10,7 @@ import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CartScreen from "./screens/CartScreen/CartScreen";
+import CarbonRewardScreen from "./screens/CarbonRewardScreen/CarbonRewardScreen";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={<HomeScreen/>} />\
-            <Route path="/product/:id" element={<ProductScreen/>} />
-            <Route path="/checkout" element={<CartScreen/>}/>
+            <Route path="/" element={<HomeScreen />} />\
+            <Route path="/product/:id" element={<ProductScreen />} />
+            <Route path="/checkout" element={<CartScreen />} />
+            <Route path="/carbonrewards" element={<CarbonRewardScreen />} />
           </Routes>
         </BrowserRouter>
       </Provider>

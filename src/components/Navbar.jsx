@@ -25,8 +25,10 @@ const Navbar = () => {
 				</div>
 				<NavMenu 
 					image={false} 
-					top={'Hello, Sign in'} 
+					top={'Carbon Points'} 
 					bottom={'Account & Lists'} 
+					link = {"/carbonrewards"}
+					carbonPoints
 				/>
 				<NavMenu 
 					image={false} 

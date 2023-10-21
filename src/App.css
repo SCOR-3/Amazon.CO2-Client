@@ -77,10 +77,10 @@ hr {
 .slick-prev:before {
   color: black !important;
 }
-.slick-next:before {
+.product-desc-div .slick-next:before {
   margin-left: -60px;
 }
-.slick-prev:before {
+.product-desc-div .slick-prev:before {
   margin-right: -59px;
   z-index: 10;
 }
