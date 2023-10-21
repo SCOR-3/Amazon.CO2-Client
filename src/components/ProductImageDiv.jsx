@@ -6,7 +6,6 @@ const ProductImageDiv = ({ src }) => {
       <div className="product-img-div">
         <div>
           <img className="product-img" src={src} />
-          
         </div>
       </div>
     </Fragment>

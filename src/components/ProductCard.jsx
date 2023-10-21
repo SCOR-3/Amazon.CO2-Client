@@ -11,13 +11,13 @@ const ProductCard = ({ id, title, image, price, rating, author, subtitle }) => {
           <p className="product-author">{author}</p>
           <div className="product-business">
             <Rating value={rating} size="small" readOnly />
-            <p className="product_price">
+            <div className="product_price">
               <div className="price-container">
                 <span>₹</span>
                 <span className="item-price">43,999</span>
                 <span>00</span>
               </div>
-            </p>
+            </div>
           </div>
         </div>
 

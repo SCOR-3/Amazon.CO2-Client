@@ -11,8 +11,9 @@
 }
 
 .product-img {
+  margin-top: 50px;
+  margin-right: 20px; 
   width: 100%;
-  aspect-ratio: 1;
 }
 
 /* Product Desc Div */
