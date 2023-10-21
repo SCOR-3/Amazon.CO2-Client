@@ -1,24 +1,31 @@
-import { Rating } from "@mui/material";
+import { Link, Rating } from "@mui/material";
 import React from "react";
 
 const ProductCard = ({ id, title, image, price, rating, author, subtitle }) => {
   return (
     <div className="product">
-      <div className="product-info">
-        <p className="product-title">{title}</p>
-        <p className="product-subtitle">{subtitle}</p>
-        <p className="product-author">{author}</p>
-        <div className="product-business">
-          <Rating value={rating} size="small" readOnly />
-          <p className="product_price">
-            <h2>$ {price}</h2>
-          </p>
+      <a href={`/product/${id}`}>
+        <div className="product-info">
+          <p className="product-title">{title}</p>
+          <p className="product-subtitle">{subtitle}</p>
+          <p className="product-author">{author}</p>
+          <div className="product-business">
+            <Rating value={rating} size="small" readOnly />
+            <p className="product_price">
+              <div className="price-container">
+                <span>₹</span>
+                <span className="item-price">43,999</span>
+                <span>00</span>
+              </div>
+            </p>
+          </div>
         </div>
+
+        <img src={image}></img>
+      </a>
+      <div className="product-add-btn-div">
+        <button className="product-add-btn">Add to Cart</button>
       </div>
-
-      <img src={image}></img>
-
-      <button >Add to Basket</button>
     </div>
   );
 };

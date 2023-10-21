@@ -2,6 +2,12 @@ import React from "react";
 import "./CarbonRewardScreen.css";
 import CarbonRewardCard from "../../components/CarbonRewardCard";
 import CarbonRewardCoupons from "../../components/CarbonRewardCoupons";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
 const CarbonRewardScreen = () => {
   return (
     <div className="carbon-reward-screen-wrapper">
@@ -35,8 +41,23 @@ const CarbonRewardScreen = () => {
           up
         />
       </div>
+      <Accordion id="carbon-accordion">
+        <AccordionSummary
+          expandIcon={<i class="fa-solid fa-angle-down" />}
+          // aria-controls="panel1a-content"
+          id="about-carbon-points-header"
+        >
+          <p>What are Carbon Points ?</p>
+        </AccordionSummary>
+        <AccordionDetails id="carbon-accordion-details">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </p>
+        </AccordionDetails>
+      </Accordion>
       <div className="carbon-rewards-coupon-wrapper">
-        <CarbonRewardCoupons/>
+        <CarbonRewardCoupons />
       </div>
     </div>
   );

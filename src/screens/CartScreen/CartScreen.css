@@ -1,6 +1,6 @@
 /* Navbar */
 .navbar {
-    color: white;
+    color: white !important;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,7 @@
     padding: 0px 10px;
     background-color: #131921;
     font-family: "Ember-Medium";
+    text-decoration: none;
   }
   .nav-base{
     font-family: "Ember-Medium";
@@ -34,7 +35,7 @@
   }
   
   .navbar .nav-address p {
-    color: #ccc;
+    color: #ccc !important;
     font-size: 12px;
   }
   
@@ -43,6 +44,7 @@
     font-weight: 700;
     line-height: 16px;
     white-space: nowrap;
+    color: #ccc !important;
   }
   
   .navbar .nav-search {

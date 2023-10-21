@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cartItems: [],
   bill: 0,
-  itemsCount: 0
+  itemsCount: 0,
 };
 
 const cartSlice = createSlice({
@@ -41,18 +41,19 @@ const cartSlice = createSlice({
       target.quantity = quantity;
     },
     calculateBill: (state, action) => {
-      let count = 0
-      let total = 0
+      let count = 0;
+      let total = 0;
+      let carbonPoints = 0;
 
-      // Calculate total amount and items count
-      state.cartItems.forEach(item => {
-          total += item.price * item.quantity
-          count += item.quantity
-      })
-      
+      state.cartItems.forEach((item) => {
+        total += item.seller.price * item.quantity;
+        count += item.quantity;
+        carbonPoints += item.seller.carbonPoints * item.quantity;
+      });
 
-      state.itemsCount = count
-      state.bill = total
+      state.itemsCount = count;
+      state.bill = total;
+      state.carbonPoints = carbonPoints;
     },
     clearCart: (state, action) => {
       state.cartItems = [];
@@ -60,6 +61,11 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem,calculateBill, changeItemQuantity, clearCart } =
-  cartSlice.actions;
+export const {
+  addItem,
+  removeItem,
+  calculateBill,
+  changeItemQuantity,
+  clearCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;

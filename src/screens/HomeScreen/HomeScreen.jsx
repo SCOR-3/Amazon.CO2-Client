@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../components/ProductCard";
-import "./HomeScreen.css"
+import "./HomeScreen.css";
 
 const HomeScreen = () => {
+  const [products, setProducts] = useState([]);
+  const getProducts = async () => {
+    const res = await axios.get("");
+    setProducts(res.data);
+  };
+  useEffect(() => {
+    getProducts();
+  }, [products]);
+
   return (
     <div className="home">
       <div className="home-container">
@@ -16,7 +25,7 @@ const HomeScreen = () => {
             id={122322}
             title="A Game of Thrones (Song of Ice and Fire) Hardcover – August 1, 1996"
             price={26.29}
-            image="https://kbimages1-a.akamaihd.net/a26bb671-977c-4324-a6af-486847cdbe32/1200/1200/False/a-game-of-thrones-a-song-of-ice-and-fire-book-1.jpg"
+            image="https://m.media-amazon.com/images/I/71nK5FjjYVL._AC_UY327_FMwebp_QL65_.jpg"
             rating={5}
             author="by George R.R. Martin"
             subtitle="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi"

@@ -59,12 +59,12 @@
   justify-content: flex-end;
   flex: 1;
 }
-.carbon-point-tooltip{
+.carbon-point-tooltip {
   margin-left: 50px;
   position: relative;
   background-color: black !important;
 }
-.carbon-point-div-wrapper .carbon-point-chip{
+.carbon-point-div-wrapper .carbon-point-chip {
   width: 100px;
   text-align: center;
   justify-content: center;
@@ -252,10 +252,19 @@
 }
 #add-to-cart-btn {
   background-color: #ffd814;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  border: 1px solid #fcd200;
+}
+#add-to-cart-btn:hover {
+  background-color: #ebb839;
 }
 #buy-now-btn {
   background-color: #ffa41c;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
   margin-bottom: 15px;
+}
+#buy-now-btn:hover{
+  background-color: #e0911b;
 }
 #in-stock {
   color: rgb(13, 133, 19);

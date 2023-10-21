@@ -93,7 +93,34 @@
   background-color: #f7ca00;
   border-color: #f2c200;
 }
-.offers-tagline{
+.offers-tagline {
   margin-top: 40px;
   font-family: "Ember-Regular";
+}
+#carbon-accordion {
+  /* border-radius: 20px; */
+  background-color: #ffffff00;
+}
+#about-carbon-points-header {
+  background-color: #131921;
+  color: white;
+  border-radius: 10px;
+}
+#about-carbon-points-header p {
+  font-size: 20px;
+  margin: 0;
+  font-family: "Ember-Medium";
+}
+#about-carbon-points-header .fa-angle-down {
+  color: white;
+}
+#carbon-accordion-details {
+  background-color: #232f3e;
+  color: white;
+  font-family: "Ember-Regular";
+  border-radius: 10px;
+  font-size: 12.5px;
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before{
+  background-color: transparent !important;
 }
