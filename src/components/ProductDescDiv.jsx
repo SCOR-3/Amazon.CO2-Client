@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 
 const ProductDescDiv = () => {
   const selectedProduct = useSelector((state) => state.product.selectedProduct);
-  const currentProduct = selectedProduct && selectedProduct.product;
-  const currentSellers = selectedProduct && selectedProduct.sellers;
   const selectedSeller = useSelector((state) => state.selected.selectedItem);
   const discount =
     selectedSeller &&
@@ -15,12 +13,12 @@ const ProductDescDiv = () => {
     );
   return (
     <Fragment>
-      {currentProduct ? (
+      {selectedProduct && selectedSeller ? (
         <div className="product-desc-div">
-          <h1>{currentProduct.name}</h1>
+          <h1>{selectedProduct.name}</h1>
           {/* <span> 3.8</span> */}
           <Rating
-            value={Math.ceil(Math.random() * 5)}
+            value={selectedSeller.rating}
             readOnly
             size="small"
             className="product-rating"

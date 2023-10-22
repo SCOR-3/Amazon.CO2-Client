@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import {calculateBill} from "../slices/cartSlice"
+import { calculateBill } from "../slices/cartSlice";
 import SingleItem from "./SingleItem";
 
 const products = [
@@ -40,19 +40,22 @@ const products = [
 ];
 
 const ItemList = () => {
-    const itemQuantities = useSelector(
-      (store) => store.cart.cartItems.map((item) => item.quantity),
-      shallowEqual
-    );
-    // const products = useSelector((store) => store.cart.cartItems);
+  const itemQuantities = useSelector(
+    (store) => store.cart.cartItems.map((item) => item.quantity),
+    shallowEqual
+  );
+  const cart = useSelector((store)=>store.cart)
+  const products = cart && cart.cartItems;
+  const itemsCount = cart && cart.itemsCount;
+  const bill = cart && cart.bill
   const dispatch = useDispatch();
 
-    useEffect(() => {
+  useEffect(() => {
     //   dispatch(evaluateGifts());
-      dispatch(calculateBill());
-    }, [itemQuantities]);
+    dispatch(calculateBill());
+  }, [itemQuantities]);
 
-  const cartEmpty = products.length == 0;
+  const cartEmpty = products.length === 0;
 
   return (
     <div className="items">
@@ -64,10 +67,10 @@ const ItemList = () => {
         ))}
       </div>
       <div className="subtotal">
-        <h3>Subtotal (9 items):</h3>
+        <h3>Subtotal ({itemsCount} items):</h3>
         <div className="price-container">
           <span>₹</span>
-          <span className="item-price">43,999</span>
+          <span className="item-price">{bill}</span>
           <span>00</span>
         </div>
       </div>

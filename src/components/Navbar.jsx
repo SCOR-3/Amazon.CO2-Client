@@ -5,12 +5,12 @@ import logo from "../assets/amazon-logo.png";
 import locationIcon from "../assets/location-icon.png";
 import flagIcon from "../assets/india-flag.png";
 import CartIcon from "./CartIcon";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <Link href="/">
+        <Link to="/">
           <div className="logo">
             <img src={logo} alt="amazon-logo" />
             <p>.in</p>

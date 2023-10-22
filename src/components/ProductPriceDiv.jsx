@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Tooltip } from "@mui/material";
+import { addItem, calculateBill } from "../slices/cartSlice";
 const ProductPriceDiv = () => {
   const d = new Date();
   const tDate = d.getDate() + 1;
@@ -22,6 +23,15 @@ const ProductPriceDiv = () => {
 
   const selectedSeller = useSelector((state) => state.selected.selectedItem);
   const product = useSelector((state) => state.product.selectedProduct);
+  const dispatch = useDispatch();
+  const addItemToCart = (product, seller) => {
+    const obj = {
+      item: product,
+      seller,
+    };
+    dispatch(addItem(obj));
+    dispatch(calculateBill());
+  };
   return (
     <Fragment>
       {selectedSeller && product ? (

@@ -22,14 +22,13 @@ const ProductSellerCarousel = () => {
   const [selected, setSelected] = useState();
   useEffect(() => {
     dispatch(changeSelected(sellerDetails && sellerDetails[0]));
-    setSelected(sellerDetails && sellerDetails[0].sellerId);
+    setSelected(sellerDetails && sellerDetails[0]._id);
   }, []);
   const dispatch = useDispatch();
   const change = (seller) => {
     dispatch(changeSelected(seller));
-    setSelected(seller.id);
+    setSelected(seller._id);
   };
-
   return (
     <Fragment>
       <h3>Help us make Amazon green: </h3>
@@ -40,7 +39,7 @@ const ProductSellerCarousel = () => {
               <div className="seller-slide-wrapper" key={seller.sellerId}>
                 <div
                   className={
-                    seller.sellerId === selected
+                    seller._id === selected
                       ? "selected-slide seller-slide"
                       : "seller-slide"
                   }
@@ -62,14 +61,20 @@ const ProductSellerCarousel = () => {
 
                   <Rating
                     size="small"
-                    value={Math.ceil(Math.random() * 5)}
+                    value={seller.rating}
                     className="seller-rating"
                     // precision={0.5}
                     readOnly
                   />
                   <br />
                   <span className="product-price">
-                    <span className="discount-percentage">-23% </span>
+                    <span className="discount-percentage">
+                      -
+                      {Math.floor(
+                        ((seller.mrp - seller.price) / seller.mrp) * 100
+                      )}
+                      %{" "}
+                    </span>
                     <span className="price-symbol">₹</span>
                     {seller.price}
                   </span>

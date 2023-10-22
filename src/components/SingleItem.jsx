@@ -11,10 +11,10 @@ import { Chip } from "@mui/material";
 
 const SingleItem = ({ product }) => {
   const {
-    id,
+    _id,
     name,
     image,
-    seller,
+    selectedSeller,
     type,
     carbon_rating,
     countInStock,
@@ -33,21 +33,21 @@ const SingleItem = ({ product }) => {
         <h3 className="item-title">{name}</h3>
         <div className="cart-carbon-point-chip-div">
           <span className="cart-carbon-point-chip">
-            <i className="fa-solid fa-seedling"> 5</i>
+            <i className="fa-solid fa-seedling">{" "} {selectedSeller.carbon_points}</i>
           </span>
         </div>
 
         {/* {author && <p className="item-author">by {author}</p>} */}
         <div className="price-container">
           <span>₹</span>
-          <span className="item-price">{seller.price}</span>
+          <span className="item-price">{selectedSeller.price}</span>
           <span>00</span>
         </div>
 
         {/* <BestSeller category={category} /> */}
         {type && <p className="item-type">{type}</p>}
         <p className="item-remaining">In stock</p>
-        {seller.price > 499 && (
+        {selectedSeller.price > 499 && (
           <p className="item-shipping">Eligible for FREE Shipping</p>
         )}
         <img src={fulfilledIcon} alt="Amazon fulfilled icon" />
@@ -56,7 +56,7 @@ const SingleItem = ({ product }) => {
 
         {/* <ItemDescription description={description} /> */}
         <div className="item-controllers">
-          <ItemQuantity id={id} />
+          <ItemQuantity id={_id} sellerId={selectedSeller._id}/>
           <h4
           // onClick={() => dispatch(removeItem(id))}
           >

@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import dropIcon from "../assets/down-arrow.png";
 import { changeItemQuantity } from "../slices/cartSlice";
 
-const ItemQuantity = ({ id }) => {
-  // const quantity = useSelector(
-  //   (store) => store.cart.cartItems.find((item) => item.id == id).quantity
-  // );
-  const quantity = 2;
+const ItemQuantity = ({ id, sellerId }) => {
+  const quantity = useSelector(
+    (store) =>
+      store.cart.cartItems.find(
+        (item) => item._id == id && item.selectedSeller._id == sellerId
+      ).quantity
+  );
   const dispatch = useDispatch();
 
   const [popup, setPopup] = useState(false);
@@ -79,7 +81,9 @@ const ItemQuantity = ({ id }) => {
             className={quantity == index + 1 ? "current-quantity" : undefined}
             onClick={() => {
               setPopup(false);
-              dispatch(changeItemQuantity({ id, quantity: index + 1 }));
+              dispatch(
+                changeItemQuantity({ id, sellerId, quantity: index + 1 })
+              );
             }}
           >
             {index + 1}

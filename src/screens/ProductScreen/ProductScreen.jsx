@@ -26,7 +26,7 @@ const ProductScreen = () => {
   }, []);
 
   const currentProduct = useSelector(
-    (state) => state.product.selectedProduct.product
+    (state) => state.product.selectedProduct
   );
 
   return (

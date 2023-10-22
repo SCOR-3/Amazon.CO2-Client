@@ -11,15 +11,19 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const { item, seller } = action.payload;
-      item.seller = seller;
+      console.log(action.payload);
+      let { item, seller } = action.payload;
+      item = JSON.parse(JSON.stringify(item));
+      item.selectedSeller = seller;
       item.quantity = 1;
-      const existItem = state.cartItems.find((x) => x.product === item.product);
+      const existItem = state.cartItems.find(
+        (x) => x._id === item._id && seller._id === x.selectedSeller._id
+      );
       if (existItem) {
         return {
           ...state,
           cartItems: state.cartItems.map((x) =>
-            x.product === existItem.product ? item : x
+            x._id === existItem._id ? item : x
           ),
         };
       } else {
@@ -36,19 +40,18 @@ const cartSlice = createSlice({
       };
     },
     changeItemQuantity: (state, action) => {
-      const { id, quantity } = action.payload;
-      const target = state.cartItems.find((item) => item.id == id);
+      const { id, sellerId, quantity } = action.payload;
+      const target = state.cartItems.find((item) => (item._id === id && item.selectedSeller._id === sellerId));
       target.quantity = quantity;
     },
     calculateBill: (state, action) => {
       let count = 0;
       let total = 0;
       let carbonPoints = 0;
-
       state.cartItems.forEach((item) => {
-        total += item.seller.price * item.quantity;
+        total += item.selectedSeller.price * item.quantity;
         count += item.quantity;
-        carbonPoints += item.seller.carbonPoints * item.quantity;
+        carbonPoints += item.selectedSeller.carbon_points * item.quantity;
       });
 
       state.itemsCount = count;
