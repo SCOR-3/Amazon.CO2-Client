@@ -7,7 +7,7 @@ const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   const getProducts = async () => {
     const res = await axios.get(
-      "https://real-ruby-slug-kilt.cyclic.app/v1/product/"
+      "https://graceful-foal-hose.cyclic.app/v1/product/"
     );
     setProducts(res.data);
   };

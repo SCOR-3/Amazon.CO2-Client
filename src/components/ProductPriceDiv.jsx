@@ -83,8 +83,11 @@ const ProductPriceDiv = () => {
               <span id="in-stock">In Stock</span>
             </h3>
             <p className="price-div-seller-info">
-              Sold by <span>{selectedSeller.name}</span> and{" "}
-              <span>Fulfilled by Amazon</span>
+              Sold by{" "}
+              <span>
+                {selectedSeller.sellerId && selectedSeller.sellerId.name}
+              </span>{" "}
+              and <span>Fulfilled by Amazon</span>
             </p>
             <button
               className="price-div-btns"

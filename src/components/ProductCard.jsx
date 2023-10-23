@@ -1,10 +1,11 @@
-import { Link, Rating } from "@mui/material";
+import { Rating } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ id, title, image, price, rating, author, subtitle }) => {
   return (
     <div className="product">
-      <a href={`/product/${id}`}>
+      <Link to={`/product/${id}`}>
         <div className="product-info">
           <p className="product-title">{title}</p>
           <p className="product-subtitle">{subtitle}</p>
@@ -22,7 +23,7 @@ const ProductCard = ({ id, title, image, price, rating, author, subtitle }) => {
         </div>
 
         <img src={image}></img>
-      </a>
+      </Link>
       <div className="product-add-btn-div">
         <button className="product-add-btn">Add to Cart</button>
       </div>

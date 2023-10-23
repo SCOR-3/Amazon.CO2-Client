@@ -14,7 +14,7 @@ const ProductScreen = () => {
   const dispatch = useDispatch();
   const getProductById = async () => {
     const res = await axios.get(
-      `https://real-ruby-slug-kilt.cyclic.app/v1/product/${id}/`
+      `https://graceful-foal-hose.cyclic.app/v1/product/${id}/`
     );
     const product = res.data;
     // console.log(product)

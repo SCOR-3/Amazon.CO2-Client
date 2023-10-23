@@ -36,7 +36,7 @@ const ProductSellerCarousel = () => {
         {sellerDetails &&
           sellerDetails.map((seller) => {
             return (
-              <div className="seller-slide-wrapper" key={seller.sellerId}>
+              <div className="seller-slide-wrapper" key={seller.sellerId._id}>
                 <div
                   className={
                     seller._id === selected
@@ -47,7 +47,7 @@ const ProductSellerCarousel = () => {
                 >
                   <div className="seller-slide-heading">
                     <div className="seller-name-div">
-                      <h2 className="seller-name">{seller.name}</h2>
+                      <h2 className="seller-name">{seller.sellerId.name}</h2>
                     </div>
                     <div className="carbon-point-div">
                       <span className="carbon-point-chip">

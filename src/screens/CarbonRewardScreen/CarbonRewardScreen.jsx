@@ -6,8 +6,10 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Typography,
+  Grid,
 } from "@mui/material";
+import CarbonCreditCard from "../../components/CarbonCreditCard";
+import CarbonProjects from "../../components/CarbonProjects";
 const CarbonRewardScreen = () => {
   return (
     <div className="carbon-reward-screen-wrapper">
@@ -59,6 +61,11 @@ const CarbonRewardScreen = () => {
       <div className="carbon-rewards-coupon-wrapper">
         <CarbonRewardCoupons />
       </div>
+      <br />
+      <br />
+      <br />
+      <hr />
+      <CarbonProjects/>
     </div>
   );
 };

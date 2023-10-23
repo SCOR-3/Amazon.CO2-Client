@@ -83,7 +83,7 @@
   width: 100%;
   padding: 5%;
   margin: 5px auto;
-  border-radius: 20px;
+  border-radius: 8px;
   border: 0;
   background-color: #ffd814;
   box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
@@ -121,6 +121,88 @@
   border-radius: 10px;
   font-size: 12.5px;
 }
-.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before{
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
   background-color: transparent !important;
+}
+.carbon-credits-div-title {
+  margin-top: 40px;
+  text-align: left;
+  font-family: "Ember-Medium";
+  font-size: 60px;
+  color: #131921;
+}
+.carbon-credits-div-title:nth-of-type(2) {
+  margin-top: 0;
+  /* text-align: right; */
+}
+
+.carbon-credit-card-wrapper {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carbon-credit-card {
+  font-family: "Ember-Regular";
+  padding: 20px;
+  box-shadow: 0 0 4px 0 rgb(181, 187, 187);
+  width: 250px;
+  border-radius: 8px;
+}
+.carbon-credit-card img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  height:200px;
+}
+.carbon-credit-card .title {
+  font-family: "Ember-Regular";
+  font-size: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.carbon-credit-card .price-container {
+  font-family: "Ember-Medium" !important;
+  font-size: 15px;
+}
+.carbon-credit-card a {
+  color: #0390a9;
+}
+.carbon-credit-card a:hover {
+  text-decoration: underline;
+}
+.carbon-credit-card .credit-desc {
+  color: rgb(19, 174, 19);
+  margin-top: 0;
+}
+.carbon-credit-card .partial-credits {
+  color: #131921;
+}
+.carbon-credit-card .price-container span:nth-of-type(3) {
+  margin-right: 4px;
+}
+.carbon-credit-card .cart {
+  all: unset;
+  font-family: "Ember-Medium";
+  height: 29px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  cursor: pointer;
+}
+.carbon-credit-card .cart:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+.carbon-credit-card .fa-circle-info{
+  margin-left: 5px;
+  color: #007600;
+  font-size: 17.5px;
 }

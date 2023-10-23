@@ -1,8 +1,8 @@
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const NavMenu = ({ image, top, bottom, carbonPoints, link }) => {
   return (
-    <Link href={link}>
+    <Link to={link}>
       <div className="nav-address">
         {image && <img src={image} alt="location-icon" />}
         <div>

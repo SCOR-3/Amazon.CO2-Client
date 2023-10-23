@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/amazon-logo-main.png";
 import "./AuthScreen.css";
+import { login } from "../../slices/userSlice";
+import { useDispatch } from "react-redux";
 const AuthScreen = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(login({email, password}));
+  };
   return (
     <div className="auth-wrapper">
       <div>
@@ -19,12 +28,27 @@ const AuthScreen = () => {
       <div className="auth-main-div">
         <p className="auth-sign-in">Sign in</p>
         <p className="auth-input-heading">Email or mobile phone number</p>
-        <input id="email-input"></input>
+        <form onSubmit={submitHandler}>
+          <input
+            id="email-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          ></input>
 
-        <p className="auth-input-heading">Password</p>
-        <input id="password-input"></input>
+          <p className="auth-input-heading">Password</p>
+          <input
+            id="password-input"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          ></input>
 
-        <button className="proceed-buy">Sign in</button>
+          <button type="submit" className="proceed-buy">
+            Sign in
+          </button>
+        </form>
         <p>
           By continuing, you agree to{" "}
           <span id="blue-color">Amazon's Conditions of Use</span> and{" "}

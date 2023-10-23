@@ -16,9 +16,7 @@ const userSlice = createSlice({
         state.userInfo = data;
       } catch (error) {
         state.error =
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message;
+          error
       }
     },
   },

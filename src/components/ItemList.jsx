@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { calculateBill } from "../slices/cartSlice";
 import SingleItem from "./SingleItem";
+import SingleCredit from "./SingleCredit";
 
 const products = [
   {
@@ -44,10 +45,10 @@ const ItemList = () => {
     (store) => store.cart.cartItems.map((item) => item.quantity),
     shallowEqual
   );
-  const cart = useSelector((store)=>store.cart)
+  const cart = useSelector((store) => store.cart);
   const products = cart && cart.cartItems;
   const itemsCount = cart && cart.itemsCount;
-  const bill = cart && cart.bill
+  const bill = cart && cart.bill;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -62,9 +63,13 @@ const ItemList = () => {
       <h2>{cartEmpty ? "Your Amazon Cart is empty." : "Shopping Cart"}</h2>
       {/* <h2>Shopping Cart</h2> */}
       <div className="items-list">
-        {products.map((product, index) => (
-          <SingleItem key={index} product={product} />
-        ))}
+        {products.map((product, index) => {
+          return product.type === "Product" ? (
+            <SingleItem key={index} product={product} />
+          ) : (
+            <SingleCredit key={index} credit={product} />
+          );
+        })}
       </div>
       <div className="subtotal">
         <h3>Subtotal ({itemsCount} items):</h3>
