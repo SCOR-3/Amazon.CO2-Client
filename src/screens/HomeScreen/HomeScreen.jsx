@@ -36,53 +36,55 @@ const HomeScreen = () => {
                 subtitle={products[0].description}
               />
               <ProductCard
-                id={122323}
-                title="Acer Aspire 5 Slim Laptop, 15.6 inches Full HD IPS Display, AMD Ryzen 3 3200U, Vega 3 Graphics, 4GB DDR4, 128GB SSD, Backlit Keyboard, Windows 10 in S Mode, A515-43-R19L, Silver"
-                price={364.99}
-                image="https://images-na.ssl-images-amazon.com/images/I/71vvXGmdKWL._AC_SL1500_.jpg"
-                rating={4}
-                author="by Acer"
+                id={products[1]._id} 
+                title={products[1].name || "abcd"}
+                price={products[1].sellers[0].price}
+                image={products[1].image}
+                rating={products[1].sellers[0].rating}
+                author={products[1].sellers[0].name}
+                subtitle={products[1].description}
               />
             </div>
 
             <div className="home-row">
               <ProductCard
-                id={122325}
-                title="SAMSUNG 75-inch Class QLED Q70T Series - 4K UHD Dual LED Quantum HDR Smart TV with Alexa Built-in (QN75Q70TAFXZA, 2020 Model)"
-                price={100.29}
-                image="https://images-na.ssl-images-amazon.com/images/I/51d1lfcMIaL._AC_SL1000_.jpg"
-                rating={4}
-                author="by Samsung"
+                 id={products[2]._id} 
+                 title={products[2].name || "abcd"}
+                 price={products[2].sellers[0].price}
+                 image={products[2].image}
+                 rating={products[2].sellers[0].rating}
+                 author={products[2].sellers[0].name}
+                 subtitle={products[2].description}
               />
               <ProductCard
-                id={122326}
-                title="OtterBox Defender Series Case for iPad Pro 11(1st Gen) - Retail Packaging - Black"
-                price={11.99}
-                image="https://images-na.ssl-images-amazon.com/images/I/51o%2ByhvbK-L._AC_SL1000_.jpg"
-                rating={5}
-                author="by OtterBox Store"
-                subtitle="At vero eos et accusamus et iusto odio dignissimos ducimus"
+                 id={products[3]._id} 
+                 title={products[3].name || "abcd"}
+                 price={products[3].sellers[0].price}
+                 image={products[3].image}
+                 rating={products[3].sellers[0].rating}
+                 author={products[3].sellers[0].name}
+                 subtitle={products[3].description}
               />
               <ProductCard
-                id={122321}
-                title="Samsung Gear S3 Frontier Smartwatch (Bluetooth), SM-R760NDAAXAR"
-                price={9.99}
-                image="https://images-na.ssl-images-amazon.com/images/I/61GcJ2DDvIL._AC_SL1000_.jpg"
-                rating={3}
-                author="by Samsung Electronics Store"
-                subtitle="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+                id={products[4]._id} 
+                title={products[4].name || "abcd"}
+                price={products[4].sellers[0].price}
+                image={products[4].image}
+                rating={products[4].sellers[0].rating}
+                author={products[4].sellers[0].name}
+                subtitle={products[4].description}
               />
             </div>
 
             <div className="home-row">
               <ProductCard
-                id={122327}
-                title="LG 65UN7300PUF Alexa Built-In UHD 73 Series 65 4K Smart UHD TV (2020"
-                price={300.99}
-                image="https://images-na.ssl-images-amazon.com/images/I/81ZcNYPYthL._AC_SL1500_.jpg"
-                rating={5}
-                author="by LG Store"
-                subtitle="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+                  id={products[5]._id} 
+                  title={products[5].name || "abcd"}
+                  price={products[5].sellers[0].price}
+                  image={products[5].image}
+                  rating={products[5].sellers[0].rating}
+                  author={products[5].sellers[0].name}
+                  subtitle={products[5].description}
               />
             </div>
           </div>
