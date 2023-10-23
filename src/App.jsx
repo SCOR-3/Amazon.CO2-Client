@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import CartScreen from "./screens/CartScreen/CartScreen";
 import CarbonRewardScreen from "./screens/CarbonRewardScreen/CarbonRewardScreen";
+import AuthScreen from "./screens/AuthScreen/AuthScreen";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/checkout" element={<CartScreen />} />
             <Route path="/carbonrewards" element={<CarbonRewardScreen />} />
+            <Route path="/auth" element={<AuthScreen />} />
           </Routes>
         </BrowserRouter>
       </Provider>

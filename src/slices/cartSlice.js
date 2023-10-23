@@ -4,6 +4,7 @@ const initialState = {
   cartItems: [],
   bill: 0,
   itemsCount: 0,
+  isCarbonNeutralDelivery: false,
 };
 
 const cartSlice = createSlice({
@@ -11,7 +12,6 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      console.log(action.payload);
       let { item, seller } = action.payload;
       item = JSON.parse(JSON.stringify(item));
       item.selectedSeller = seller;
@@ -41,7 +41,9 @@ const cartSlice = createSlice({
     },
     changeItemQuantity: (state, action) => {
       const { id, sellerId, quantity } = action.payload;
-      const target = state.cartItems.find((item) => (item._id === id && item.selectedSeller._id === sellerId));
+      const target = state.cartItems.find(
+        (item) => item._id === id && item.selectedSeller._id === sellerId
+      );
       target.quantity = quantity;
     },
     calculateBill: (state, action) => {
@@ -52,6 +54,7 @@ const cartSlice = createSlice({
         total += item.selectedSeller.price * item.quantity;
         count += item.quantity;
         carbonPoints += item.selectedSeller.carbon_points * item.quantity;
+        if (state.isCarbonNeutralDelivery) carbonPoints += 2 * item.quantity;
       });
 
       state.itemsCount = count;
@@ -60,6 +63,9 @@ const cartSlice = createSlice({
     },
     clearCart: (state, action) => {
       state.cartItems = [];
+    },
+    toggleCarbonNeutralDelivery: (state, action) => {
+      state.isCarbonNeutralDelivery = !state.isCarbonNeutralDelivery;
     },
   },
 });
@@ -70,5 +76,6 @@ export const {
   calculateBill,
   changeItemQuantity,
   clearCart,
+  toggleCarbonNeutralDelivery,
 } = cartSlice.actions;
 export default cartSlice.reducer;

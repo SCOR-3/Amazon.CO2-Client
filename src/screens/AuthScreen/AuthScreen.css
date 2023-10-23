@@ -1,0 +1,63 @@
+.auth-logo-img {
+  margin:20px auto;
+  width: 100px;
+}
+.auth-main-div {
+  padding: 20px 26px !important;
+  width: 270px;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: "Ember-Regular";
+}
+.auth-sign-in {
+  font-family: "Ember-Regular";
+  font-size: 35px !important;
+  margin-top: 0;
+
+}
+.auth-input-heading {
+  margin-bottom: 0;
+  font-family: "Ember-Light";
+  font-weight: bolder;
+  font-size: 15px;
+}
+.auth-main-div input {
+  width: 258px;
+  background-color: #fff;
+  height: 31px;
+  padding: 3px 7px;
+  line-height: normal;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 0 rgba(0, 0, 0, 0.07) inset;
+  outline: 0;
+  font-family: "Ember-Light";
+  margin: auto;
+}
+.auth-main-div button {
+  margin-top: 50px;
+  margin: 20px auto;
+}
+.auth-main-div hr {
+  background-color: transparent;
+  display: block;
+  height: 1px;
+  border-width: 0;
+  border-top: 1px solid #e7e7e7;
+  line-height: 19px;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+.auth-main-div p{
+    font-size: 13px;
+}
+#blue-color {
+  color: #0066c0;
+}
+#buying-for-work{
+    font-family: "Ember-Medium";
+    font-size: 14px;
+}

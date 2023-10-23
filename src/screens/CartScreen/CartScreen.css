@@ -603,6 +603,16 @@
   .sidebar-container {
     padding: 20px;
     background-color: white;
+    width: 260px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  .sidebar-container-2 {
+    padding: 20px;
+    background-color: white;
+    width: 260px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
   }
   
   .sidebar-header {
@@ -690,4 +700,15 @@
   .item-container p {
     margin: 0;
     padding: 0;
+  }
+
+  .carbon-neutral-delivery-checkbox{
+    font-size: 13px;
+    font-family: "Ember-Medium";
+    margin-bottom: 10px;
+  }
+  .carbon-neutral-delivery-checkbox span{
+    color: #007600;
+    font-weight: bolder;
+    font-size: 15px;
   }

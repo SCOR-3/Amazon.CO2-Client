@@ -3,7 +3,7 @@ import cartIcon from "../assets/cart-icon.png";
 import { Link } from "react-router-dom";
 
 const CartIcon = () => {
-  const itemsCount = 8;
+  const itemsCount = useSelector((state) => state.cart.itemsCount);
 
   return (
     <Link to="/checkout">
