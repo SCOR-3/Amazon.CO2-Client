@@ -1,4 +1,14 @@
 # Amazon.CO2-Client
+This project serves as the frontend of Amazon.CO2, it consists of various frontend components, UI/UX elements, creative additions to user interactions and integration with state management tools
+
+#### Deployed: [https://heroic-valkyrie-d7ef27.netlify.app/](https://heroic-valkyrie-d7ef27.netlify.app/)
+#### Login Credentials:
+
+email: johndoe@examle.com
+password: examplePassword
+
+email: smalhotra_be20@thapar.edu
+password: examplePassword
 
 ## Technologies used
 
@@ -26,7 +36,7 @@ npm run dev
 npm run build
 ```
 
-## Screens
+# Screens
 
 ### Home Screen
 
@@ -49,7 +59,7 @@ npm run build
 
 ![Auth Screen](./src/assets/readmeImages/Screenshot_20231025_014445.png)
 
-## Features and Functionality
+# Features and Functionality
 
 ### Carbon Points
 
