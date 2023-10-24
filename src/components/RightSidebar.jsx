@@ -8,7 +8,7 @@ import { buyProducts } from "../slices/userSlice";
 import { clearCart } from "../slices/cartSlice";
 
 const RightSidebar = () => {
-  const userInfo = useSelector((store)=>store.user.userInfo)
+  const userInfo = useSelector((store) => store.user.userInfo);
   const cart = useSelector((store) => store.cart);
   const itemsCount = cart && cart.itemsCount;
   const bill = cart && cart.bill;
@@ -24,8 +24,10 @@ const RightSidebar = () => {
     });
     let carbonPoints = cart.carbonPoints + userInfo.carbonPoints;
 
-    dispatch(buyProducts({userId: userInfo._id, carbonCredits, carbonPoints}));
-    dispatch(clearCart())
+    dispatch(
+      buyProducts({ userId: userInfo._id, carbonCredits, carbonPoints })
+    );
+    dispatch(clearCart());
   };
 
   return (
@@ -69,9 +71,9 @@ const RightSidebar = () => {
           </AccordionSummary>
           <AccordionDetails>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
+              By returning packaging to our delivery team, customers can
+              contribute to recycling efforts, aiding our aim to achieve
+              Amazon's net zero carbon emissions goal by 2040.
             </p>
           </AccordionDetails>
         </Accordion>
