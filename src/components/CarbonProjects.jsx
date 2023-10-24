@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CarbonCreditCard from "./CarbonCreditCard";
+import axios from "axios";
 
 const carbonProjects = [
   {
@@ -22,6 +23,17 @@ const carbonProjects = [
 ];
 
 const CarbonProjects = () => {
+
+  const [carbonProjects, setCarbonProjects] = useState([])
+  const getCarbonProjects = async() => {
+    const res = await axios.get("https://graceful-foal-hose.cyclic.app/v1/carbonMarkets");
+    setCarbonProjects(res.data)
+  }
+  
+  useEffect(()=>{
+    getCarbonProjects()
+  }, [])
+  console.log(carbonProjects)
   return (
     <div className="carbon-credits-div">
       <h1 className="carbon-credits-div-title">
@@ -33,7 +45,7 @@ const CarbonProjects = () => {
       </h1>
 
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {carbonProjects &&
+        {carbonProjects.length > 0 &&
           carbonProjects.map((project) => {
             return (
               <Grid item xs={3} key={project._id}>

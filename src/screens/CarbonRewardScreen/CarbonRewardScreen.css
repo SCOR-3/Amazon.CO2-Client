@@ -163,10 +163,13 @@
   height:200px;
 }
 .carbon-credit-card .title {
-  font-family: "Ember-Regular";
-  font-size: 30px;
+  font-family: "Ember-Medium";
+  font-size: 25px;
   margin-top: 5px;
   margin-bottom: 5px;
+  height: 150px;
+  vertical-align: auto;
+
 }
 .carbon-credit-card .price-container {
   font-family: "Ember-Medium" !important;
@@ -212,4 +215,7 @@
   margin-left: 5px;
   color: #007600;
   font-size: 17.5px;
+}
+.single-credit-img{
+  height: 120px !important;
 }

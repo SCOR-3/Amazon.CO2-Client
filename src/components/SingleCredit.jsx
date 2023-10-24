@@ -14,7 +14,7 @@ const SingleCredit = ({ credit }) => {
   return (
     // quantity ? (
     <div className="single-item">
-      <img src={image} alt="item-image" />
+      <img src={image} alt="item-image" className="single-credit-img"/>
       <div>
         <h3 className="item-title">{title}</h3>
         <div className="cart-carbon-point-chip-div">

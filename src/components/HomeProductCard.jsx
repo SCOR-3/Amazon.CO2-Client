@@ -2,6 +2,7 @@ import { Tooltip } from "@mui/material";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addItem, calculateBill } from "../slices/cartSlice";
+import { Link } from "react-router-dom";
 
 const HomeProductCard = ({ product }) => {
   const d = new Date();
@@ -31,15 +32,17 @@ const HomeProductCard = ({ product }) => {
     );
   const dispatch = useDispatch();
   const addToCart = () => {
-    dispatch(addItem({item: product, seller: product.sellers[0]}))
-    dispatch(calculateBill())
+    dispatch(addItem({ item: product, seller: product.sellers[0] }));
+    dispatch(calculateBill());
   };
   return (
     <div className="home-product-card">
-      <center>
-        <img src={product.image} />
-      </center>
-      <p className="title">{product.name}</p>
+      <Link to={`/product/${product._id}`}>
+        <center>
+          <img src={product.image} />
+        </center>
+        <p className="title">{product.name}</p>
+      </Link>
       <div className="carbon-point-div">
         <span className="carbon-point-chip">
           <i class="fa-solid fa-seedling">
@@ -70,7 +73,7 @@ const HomeProductCard = ({ product }) => {
         <span class>Tomorrow, {`${d.getDate()} ${months[d.getMonth()]}`}</span>.
         Order within <span className="green">8 hrs 3 mins.</span> Details
       </p>
-      <button onClick={()=>addToCart()}>Add to Cart</button>
+      <button onClick={() => addToCart()}>Add to Cart</button>
     </div>
   );
 };
