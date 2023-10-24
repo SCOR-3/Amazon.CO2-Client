@@ -126,7 +126,7 @@
   color: white;
   font-family: "Ember-Regular";
   border-radius: 0px;
-  font-size: 12.5px;
+  font-size: 15px;
 }
 .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
   background-color: transparent !important;
@@ -218,4 +218,7 @@
 }
 .single-credit-img{
   height: 120px !important;
+}
+.carbon-credits-div-title span{
+  color:rgb(19, 174, 19)
 }

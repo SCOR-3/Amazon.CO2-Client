@@ -23,18 +23,18 @@ const HomeProductCard = ({ product }) => {
     "December",
   ];
 
+  const sellers = product && product.sellers;
+  sellers.sort((a, b) => b.carbon_points - a.carbon_points);
+
   const discount =
-    product.sellers.length > 0 &&
-    Math.floor(
-      ((product.sellers[0].mrp - product.sellers[0].price) /
-        product.sellers[0].mrp) *
-        100
-    );
+    sellers.length > 0 &&
+    Math.floor(((sellers[0].mrp - sellers[0].price) / sellers[0].mrp) * 100);
   const dispatch = useDispatch();
   const addToCart = () => {
     dispatch(addItem({ item: product, seller: product.sellers[0] }));
     dispatch(calculateBill());
   };
+
   return (
     <div className="home-product-card">
       <Link to={`/product/${product._id}`}>
@@ -47,7 +47,7 @@ const HomeProductCard = ({ product }) => {
         <span className="carbon-point-chip">
           <i class="fa-solid fa-seedling">
             {" "}
-            {` ${product.sellers[0].carbon_points}`}{" "}
+            {` ${sellers && sellers[0].carbon_points}`}{" "}
           </i>
         </span>
       </div>
@@ -55,14 +55,11 @@ const HomeProductCard = ({ product }) => {
       <p className="product-pricing">
         <span className="discount-percentage">-{discount}%</span>{" "}
         <span className="price-symbol-large">₹</span>
-        {product.sellers && product.sellers[0].price}
+        {sellers && sellers[0].price}
         <span className="price-symbol-large">00</span>
       </p>
       <p className="mrp">
-        M.R.P:{" "}
-        <span className="mrp-pricing">
-          ₹{product.sellers && product.sellers[0].mrp}
-        </span>
+        M.R.P: <span className="mrp-pricing">₹{sellers && sellers[0].mrp}</span>
       </p>
       <p className="amazon-prime-verified">
         <i class="fa-solid fa-check"></i>

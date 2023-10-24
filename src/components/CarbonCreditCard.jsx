@@ -35,7 +35,7 @@ const CarbonCreditCard = ({ project }) => {
           atmosphere
         </p>
         <button className="cart" onClick={() => addCreditToCart()}>
-          Add to cart
+          Add 1 credit to cart
         </button>
         <p className="partial-credits">
           Partial Credits available. <a>Learn more</a>

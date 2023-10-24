@@ -271,3 +271,6 @@
 .home-product-card .delivery-date{
   font-size: 13px;
 }
+.home-product-card a{
+  text-decoration: none;
+}

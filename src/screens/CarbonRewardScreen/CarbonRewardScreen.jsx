@@ -33,14 +33,14 @@ const CarbonRewardScreen = () => {
         <CarbonRewardCard
           text={userInfo.carbon_credits}
           subtext={"Your Carbon Credits"}
-          logo={"fa-temperature-arrow-down"}
+          logo={"fa-coins"}
           statText={"+6.8% (+4)"}
           up
         />
         <CarbonRewardCard
           text={userInfo.coupons.length}
           subtext={"Coupons Collected"}
-          logo={"fa-fire"}
+          logo={"fa-tags"}
           statText={"+6.8% (+4)"}
           up
         />
@@ -55,26 +55,11 @@ const CarbonRewardScreen = () => {
         </AccordionSummary>
         <AccordionDetails id="carbon-accordion-details">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            A loyalty reward point system based on the carbon footprint of the sellers 
           </p>
         </AccordionDetails>
       </Accordion>
-      <Accordion id="carbon-accordion">
-        <AccordionSummary
-          expandIcon={<i class="fa-solid fa-angle-down" />}
-          // aria-controls="panel1a-content"
-          id="about-carbon-points-header"
-        >
-          <p>What are Carbon Credits ?</p>
-        </AccordionSummary>
-        <AccordionDetails id="carbon-accordion-details">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </p>
-        </AccordionDetails>
-      </Accordion>
+
       <Accordion id="carbon-accordion">
         <AccordionSummary
           expandIcon={<i class="fa-solid fa-angle-down" />}
@@ -85,8 +70,9 @@ const CarbonRewardScreen = () => {
         </AccordionSummary>
         <AccordionDetails id="carbon-accordion-details">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            Your carbon rating defines how environmentally friendly your Amazon
+            order history is. It also considers your environmental contribution
+            in the form of carbon credits.
           </p>
         </AccordionDetails>
       </Accordion>

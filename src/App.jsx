@@ -15,6 +15,7 @@ import CarbonRewardScreen from "./screens/CarbonRewardScreen/CarbonRewardScreen"
 import AuthScreen from "./screens/AuthScreen/AuthScreen";
 
 function App() {
+  
   return (
     <div className="app">
       <Provider store={store}>
