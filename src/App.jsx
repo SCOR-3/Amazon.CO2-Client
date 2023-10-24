@@ -4,7 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import ProductScreen from "./screens/ProductScreen/ProductScreen";
 import { Provider } from "react-redux";
-import store from "./store";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 // import Header from "./components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,16 +18,18 @@ function App() {
   return (
     <div className="app">
       <Provider store={store}>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />\
-            <Route path="/product/:id" element={<ProductScreen />} />
-            <Route path="/checkout" element={<CartScreen />} />
-            <Route path="/carbonrewards" element={<CarbonRewardScreen />} />
-            <Route path="/auth" element={<AuthScreen />} />
-          </Routes>
-        </BrowserRouter>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomeScreen />} />\
+              <Route path="/product/:id" element={<ProductScreen />} />
+              <Route path="/checkout" element={<CartScreen />} />
+              <Route path="/carbon" element={<CarbonRewardScreen />} />
+              <Route path="/auth" element={<AuthScreen />} />
+            </Routes>
+          </BrowserRouter>
+        </PersistGate>
       </Provider>
     </div>
   );

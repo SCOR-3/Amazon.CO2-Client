@@ -36,7 +36,7 @@ const ProductSellerCarousel = () => {
         {sellerDetails &&
           sellerDetails.map((seller) => {
             return (
-              <div className="seller-slide-wrapper" key={seller.sellerId._id}>
+              <div className="seller-slide-wrapper" key={seller.sellerId && seller.sellerId._id}>
                 <div
                   className={
                     seller._id === selected
@@ -47,7 +47,7 @@ const ProductSellerCarousel = () => {
                 >
                   <div className="seller-slide-heading">
                     <div className="seller-name-div">
-                      <h2 className="seller-name">{seller.sellerId.name}</h2>
+                      <h2 className="seller-name">{seller.sellerId && seller.sellerId.name}</h2>
                     </div>
                     <div className="carbon-point-div">
                       <span className="carbon-point-chip">
@@ -61,7 +61,7 @@ const ProductSellerCarousel = () => {
 
                   <Rating
                     size="small"
-                    value={seller.rating}
+                    value={seller.sellerId && seller.sellerId.rating}
                     className="seller-rating"
                     // precision={0.5}
                     readOnly

@@ -10,6 +10,7 @@ const HomeScreen = () => {
       "https://graceful-foal-hose.cyclic.app/v1/product/"
     );
     setProducts(res.data);
+
   };
   useEffect(() => {
     getProducts();
@@ -40,7 +41,7 @@ const HomeScreen = () => {
                 title={products[1].name || "abcd"}
                 price={products[1].sellers[0].price}
                 image={products[1].image}
-                rating={products[1].sellers[0].rating}
+                rating={products[1].sellers[0].sellerId.rating}
                 author={products[1].sellers[0].name}
                 subtitle={products[1].description}
               />

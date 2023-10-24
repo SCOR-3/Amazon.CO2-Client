@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import logo from "../../assets/amazon-logo-main.png";
 import "./AuthScreen.css";
+import { useNavigate } from "react-router-dom";
 import { login } from "../../slices/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
 const AuthScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login({email, password}));
+    console.log("submit");
+    dispatch(login({ email, password }));
   };
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  if (user.isAuth) navigate("/");
   return (
     <div className="auth-wrapper">
       <div>
@@ -44,10 +50,15 @@ const AuthScreen = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           ></input>
-
-          <button type="submit" className="proceed-buy">
-            Sign in
-          </button>
+          {user.isLoading ? (
+            <button className="proceed-buy">
+              <CircularProgress />
+            </button>
+          ) : (
+            <button type="submit" className="proceed-buy">
+              Sign in
+            </button>
+          )}
         </form>
         <p>
           By continuing, you agree to{" "}
