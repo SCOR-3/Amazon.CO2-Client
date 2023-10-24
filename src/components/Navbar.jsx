@@ -32,12 +32,11 @@ const Navbar = () => {
           <NavMenu
             image={false}
             top={"Carbon Points"}
-            bottom={"Account & Lists"}
             link={"/carbon"}
             carbonPoints
           />
         ) : (
-          <NavMenu image={false} top={"Sign in for"} bottom={"Carbon"} />
+          <NavMenu image={false} top={"Sign in for"} bottom={"Carbon"} link={"/auth"}/>
         )}
 
         <NavMenu image={false} top={"Returns"} bottom={"& Orders"} />

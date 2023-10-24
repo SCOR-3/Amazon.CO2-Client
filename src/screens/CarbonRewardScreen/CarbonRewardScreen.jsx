@@ -10,12 +10,14 @@ import {
 } from "@mui/material";
 import CarbonCreditCard from "../../components/CarbonCreditCard";
 import CarbonProjects from "../../components/CarbonProjects";
+import { useSelector } from "react-redux";
 const CarbonRewardScreen = () => {
+  const userInfo = useSelector((state) => state.user.userInfo);
   return (
     <div className="carbon-reward-screen-wrapper">
       <div className="carbon-rewards-header">
         <CarbonRewardCard
-          text={"204"}
+          text={userInfo.carbonPoints}
           subtext={"Carbon Points"}
           logo={"fa-seedling"}
           statText={"+6.8% (+4)"}
@@ -29,15 +31,15 @@ const CarbonRewardScreen = () => {
           down
         />
         <CarbonRewardCard
-          text={"12 mCO2"}
-          subtext={"CO2 emissions saved"}
+          text={userInfo.carbon_credits}
+          subtext={"Your Carbon Credits"}
           logo={"fa-temperature-arrow-down"}
           statText={"+6.8% (+4)"}
           up
         />
         <CarbonRewardCard
-          text={"24 mCO2"}
-          subtext={"Your CO2 Emissions"}
+          text={userInfo.coupons.length}
+          subtext={"Coupons Collected"}
           logo={"fa-fire"}
           statText={"+6.8% (+4)"}
           up
@@ -58,6 +60,36 @@ const CarbonRewardScreen = () => {
           </p>
         </AccordionDetails>
       </Accordion>
+      <Accordion id="carbon-accordion">
+        <AccordionSummary
+          expandIcon={<i class="fa-solid fa-angle-down" />}
+          // aria-controls="panel1a-content"
+          id="about-carbon-points-header"
+        >
+          <p>What are Carbon Credits ?</p>
+        </AccordionSummary>
+        <AccordionDetails id="carbon-accordion-details">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </p>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion id="carbon-accordion">
+        <AccordionSummary
+          expandIcon={<i class="fa-solid fa-angle-down" />}
+          // aria-controls="panel1a-content"
+          id="about-carbon-points-header"
+        >
+          <p>What is my Carbon Rating ?</p>
+        </AccordionSummary>
+        <AccordionDetails id="carbon-accordion-details">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </p>
+        </AccordionDetails>
+      </Accordion>
       <div className="carbon-rewards-coupon-wrapper">
         <CarbonRewardCoupons />
       </div>
@@ -65,7 +97,7 @@ const CarbonRewardScreen = () => {
       <br />
       <br />
       <hr />
-      <CarbonProjects/>
+      <CarbonProjects />
     </div>
   );
 };

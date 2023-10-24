@@ -4,14 +4,30 @@ import tickIcon from "../assets/green-tick.png";
 import { Fragment } from "react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import CarbonNeutralDeliveryCheckBox from "./CarbonNeutralDeliveryCheckBox";
+import { buyProducts } from "../slices/userSlice";
+import { clearCart } from "../slices/cartSlice";
 
 const RightSidebar = () => {
+  const userInfo = useSelector((store)=>store.user.userInfo)
   const cart = useSelector((store) => store.cart);
   const itemsCount = cart && cart.itemsCount;
   const bill = cart && cart.bill;
   const carbonPoints = cart && cart.carbonPoints;
   const isCarbonNeutralDelivery = cart.isCarbonNeutralDelivery;
   const dispatch = useDispatch();
+  const buy = () => {
+    let carbonCredits = userInfo.carbon_credits;
+    cart.cartItems.map((item) => {
+      if (item.type === "Carbon") {
+        carbonCredits += item.quantity;
+      }
+    });
+    let carbonPoints = cart.carbonPoints + userInfo.carbonPoints;
+
+    dispatch(buyProducts({userId: userInfo._id, carbonCredits, carbonPoints}));
+    dispatch(clearCart())
+  };
+
   return (
     <div>
       <div className="sidebar">
@@ -27,8 +43,8 @@ const RightSidebar = () => {
             <h3>Carbon Points:</h3>
             <div className="price-container">
               <i className="fa-solid fa-seedling"></i>
-              <span className="item-price">{carbonPoints}{" "}</span>
-              {" "}{isCarbonNeutralDelivery ? " (+2/item)" : ""}
+              <span className="item-price">{carbonPoints} </span>{" "}
+              {isCarbonNeutralDelivery ? " (+2/item)" : ""}
             </div>
           </div>
           <div className="subtotal">
@@ -40,7 +56,9 @@ const RightSidebar = () => {
             </div>
           </div>
           <CarbonNeutralDeliveryCheckBox />
-          <button className="proceed-buy">Proceed to Buy</button>
+          <button className="proceed-buy" onClick={() => buy()}>
+            Proceed to Buy
+          </button>
         </div>
       </div>
       <br />

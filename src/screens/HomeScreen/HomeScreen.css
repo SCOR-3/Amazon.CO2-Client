@@ -205,7 +205,7 @@
   font-size: 20px;
   color: rgb(231, 80, 10);
 }
-.product .product-add-btn-div{
+.product .product-add-btn-div {
   width: 100%;
   text-align: center;
 }
@@ -221,4 +221,51 @@
 }
 .product .product-add-btn:hover {
   background-color: #ebb839;
+}
+.home-product-card {
+  background-color: white;
+  height: 550px;
+  padding: 30px 30px;
+  font-family: "Ember-Medium";
+  background-color: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  position: relative;
+}
+.home-product-card img {
+  width: 180px;
+  height: 180px;
+  margin: auto;
+}
+.home-product-card  .title{
+  height: 135px;
+}
+.home-product-card .great-indian-festival {
+  font-size: 13px;
+}
+.home-product-card .discount-percentage {
+  font-size: 20px;
+}
+.home-product-card .product-pricing {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.home-product-card button {
+  width: 78%;
+  padding: 10px 10px;
+  margin: 5px auto;
+  border-radius: 8px;
+  border: 0;
+  background-color: #ffd814;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  border: 1px solid #fcd200;
+  position: absolute;
+  bottom: 20px;
+}
+.home-product-card button:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+.home-product-card .delivery-date{
+  font-size: 13px;
 }

@@ -10,6 +10,9 @@
     background-color: #131921;
     font-family: "Ember-Medium";
     text-decoration: none;
+    /* position: fixed;
+    width:99%;
+    z-index: 1000; */
   }
   .nav-base{
     font-family: "Ember-Medium";
@@ -711,4 +714,7 @@
     color: #007600;
     font-weight: bolder;
     font-size: 15px;
+  }
+  .nav-address .fa-seedling{
+    color: #04a904 !important;
   }

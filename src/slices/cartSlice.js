@@ -98,7 +98,6 @@ const cartSlice = createSlice({
     toggleCarbonNeutralDelivery: (state, action) => {
       state.isCarbonNeutralDelivery = !state.isCarbonNeutralDelivery;
     },
-    buyCart: (state, action) => {},
   },
 });
 
